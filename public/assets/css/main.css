@@ -1,0 +1,320 @@
+
+.rootLinkGroup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    font-size: 80%
+}
+
+.rootLink {
+    position: relative;
+    top: 242px;
+    color: #A2A1A1;
+    padding: 5px
+}
+
+@media (max-width:655px) {
+    .rootLink {
+        display: block;
+    }
+    .rootLinkGroup {
+        bottom: 18px;
+    }
+}
+
+.searchContent {
+    font-size: 150%;
+}
+
+.topLogo {
+    position: absolute;
+    padding: 10px;
+}
+
+.topSearchBar {
+    height: 60px;
+    width: 100%;
+    border: none;
+    margin-bottom: 10px;
+    background: #26a69a;
+    box-shadow: 1px 1px 2px grey;
+}
+
+.blockInformation {
+    line-height: 1.5;
+}
+
+.inputSearchBox {
+    padding: .8em;
+    font-size: 60%;
+}
+
+@media (max-width:1100px) {
+    .topLogo {
+        width: 100px;
+        margin-top: 8px;
+    }
+
+    .searchContent {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width:600px) {
+    .topLogo {
+        display: none;
+    }
+    .searchContent {
+        bottom: 14px;
+        left: 0vw;
+        bottom: 14px;
+    }
+    .input--makiko {
+        max-width: 100vw !important;
+        width: 96vw;
+        left: 50%;
+    }
+}
+
+
+/* Recent Blocks/Transaction Page Starts */
+
+.recentTransactionsLeftTitle {
+text-align: center; 
+padding: 10px; 
+margin: 0px; 
+background: #FFA35F;
+}
+
+.recentTransactionsRightTitle {
+text-align: center; 
+padding: 10px; 
+margin: 0px; 
+background: #418A95
+}
+
+
+
+.tableLeftTitleArea {
+    height: 43px;
+    background: #FFA35F;
+    min-width: 100%
+}
+
+.tableRightTitleArea {
+    height: 43px;
+    background: #418A95;
+    min-width: 100%
+}
+
+.tableSelect {
+    position: relative;
+    float: right;
+    top: 10px;
+    margin-right: 10px;
+}
+
+.tableSelectDescription {
+    position: relative;
+    float: right;
+    top: 12px;
+    margin-right: 10px
+}
+
+.recentBlocksTableBody {
+    height: calc(100vh - 212px - 79px);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.recentTransactionsTableBody {
+    height: calc(100vh - 219px - 79px);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.tableBlockDisplay {
+    display: block;
+}
+
+.tableCellPadding {
+    padding: 5px;
+    width: 1000px
+}
+
+.tableCellUnderline {
+    border-bottom: rgba(0, 0, 0, .05) 1px solid;
+}
+
+.tableHeaderWidth {
+    width: 100.3%
+}
+
+.tableRightRowBackground {
+    background: #63ACB7;
+}
+
+.tableLeftRowBackground {
+    background: #FFD689;
+}
+
+.tableLeftRowBackgroundSub {
+    background: #FFF0AF
+}
+
+.tableLeftRowSubtitle {
+    margin: 10px;
+    background: #FFA35F;
+    text-align: left;
+    font-size: 120%;
+    display: inline-block;
+}
+
+.tableRightRowSubtitle {
+    margin: 10px;
+    background: #418A95;
+    text-align: center;
+    font-size: 120%;
+    display: inline-block;
+}
+
+.tableRightRowBackgroundSub {
+    background: #C9EBF0
+}
+
+.tableRightTextColor {
+    color: #f6f3f7;
+}
+
+.tableRowPosition {
+    position: fixed
+}
+
+.recentLeftContainer {
+    position: relative;
+    border: #FFA35F 3px solid;
+    border-radius: 10px;
+    width: 45.5vw;
+    float: left;
+    top: 20px;
+    left: 3vw;
+    height: calc(100vh - 212px);
+}
+
+.recentRightContainer {
+    width: 45.5vw;
+    height: calc(100vh - 212px);
+    top: 20px;
+    position: relative;
+    float: right;
+    right: 3vw;
+    border: #418A95 3px solid;
+    border-radius: 10px
+}
+
+@media (max-width:865px) {
+    .recentLeftContainer {
+        position: relative;
+        min-width: 80vw;
+        border: #FFA35F 3px solid;
+        border-radius: 10px;
+        width: 45.5vw;
+        float: none;
+        top: 20px;
+        left: 10%;
+        height: calc(100vh - 212px);
+    }
+    .recentRightContainer {
+        min-width: 80vw;
+        height: calc(100vh - 212px);
+        top: 20px;
+        float: none;
+        left: 10%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width:1015px) {
+    .tableCellPadding {
+        word-wrap: break-word;
+    }
+}
+
+.recentTableSetup {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    color: #6b6b6b;
+    table-layout: fixed;
+}
+
+.recentTopBarContainer {
+    height: 60px;
+}
+
+.recentTitle {
+    text-align: center;
+}
+
+.animatedRow {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.recentTableRow {
+    width: 1000px;
+    display:table-cell;
+}
+
+.recentTransactionBodyCell{
+    width: 1000px;
+    font-size: 80%;
+}
+
+.refreshTransactionTable {
+    height: calc(100vh - 215px - 79px - 34px) !important;
+}
+
+.rightRowCells {
+    color: rgba(246, 243, 247, 0.97)
+}
+.recentRefreshIcon {
+    margin-left: 5px;
+}
+
+
+/* Recent Blocks/Transaction Page Ends */
+
+
+/* Test CSS area */
+

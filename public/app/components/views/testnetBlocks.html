@@ -1,0 +1,32 @@
+<div ng-include src="'app/components/views/topBar.html'"> </div>
+<div style="margin-left: 20px;">
+<span class="blockInformation">
+<b>Type:</b> Testnet Block
+        <br>
+<b>Hash:</b> <i>{{block.hash}}</i>
+<span ng-hide="block.nextblockhash"><br><b>Notes: </b> Most Recent Block </span>
+<br> <b>Block Height: </b> {{block.height}}
+<br> <b>Confirmations: </b>{{block.confirmations}}
+<br> <b>Difficulty: </b> {{block.difficulty}} 
+<br> <b>Chainwork: </b>{{block.chainwork}}
+<br> <b>Size: </b>{{block.size}} Bytes ({{blockSize}} kb)
+<br> <b>Version:</b> {{block.version}}
+<br>
+<span ng-hide="!block.nextblockhash"><b>Next Block Hash: </b> 
+<a target="_self" ng-href="/tblock/{{block.nextblockhash}}"> {{block.nextblockhash}}</a><br></span>
+<b>Previous Block Hash:</b> <a target="_self" ng-href="tblock/{{block.previousblockhash}}"> {{block.previousblockhash}}</a>
+<br> <b>Nonce: </b> {{block.nonce}}
+<br> <b>Merkleroot:</b> {{block.merkleroot}}
+    <br> <b>Bits:</b> {{block.bits}}
+<br> <b>Time:</b> {{block.time}}
+    <span ng-hide="block.nextblockhash"><br><b>Notes: </b> Most Recent Block </span>
+<br>
+</span>
+<br> {{blockCount}} Transactions:
+<ol>
+    <li ng-repeat="txid in block.tx">
+     <a ng-href="tTXID/{{txid}}">{{txid}}</a>
+    </li>
+</ol>
+</div>
+

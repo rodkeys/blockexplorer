@@ -1,0 +1,14 @@
+<script src="app/components/miscellaneous/classie.js"></script>
+<div class="topSearchBar" ng-controller="searchController">
+    <a href="/"> <img src="/assets/images/logo.png" class="topLogo"> </a>
+    <form ng-submit="searchExplorer()">
+        <section class="searchContent bgcolor-4">
+            <span class="input input--makiko">
+					<input ng-model="searchInput" class="input__field input__field--makiko inputSearchBox" type="text" id="input-16" />
+					<label class="input__label input__label--makiko" for="input-16">
+						<span class="input__label-content input__label-content--makiko">Search</span>
+            </label>
+            </span>
+        </section>
+    </form>
+</div>

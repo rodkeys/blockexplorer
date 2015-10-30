@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Testnet and Alpha Chain Explorer</title>
+    <!-- FOR ANGULAR ROUTING -->
+    <base href="/">
+    <!-- CSS -->
+    <!-- load bootstrap from CDN and custom CSS -->
+    <link rel="stylesheet" href="/assets/css/tympanus.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- JS -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- build:js(app) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/bower_components/angular/angular.js"></script>
+    <script src="/assets/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/assets/bower_components/angular-socket-io/socket.js"></script>
+    <!-- endbower -->
+    <!-- services -->
+    <script src="app/components/services/mysocket.js"></script>
+    <script src="app/components/services/search.js"></script>
+    <script src="app/components/services/blockHistory.js"></script>
+    <!-- controllers -->
+    <script src="app/components/controllers/default.js"></script>
+    <script src="app/components/controllers/blocks.js"></script>
+    <script src="app/components/controllers/transactions.js"></script>
+    <script src="app/components/controllers/search.js"></script>
+    <script src="app/components/controllers/recentBlocks.js"></script>
+    <script src="app/components/controllers/recentTransactions.js"></script>
+    <script src="app/components/controllers/unknown.js"></script>
+    <!-- Miscellaneous -->
+    
+
+    <!-- main Angular app files -->
+    <script src="app/app.js"></script>
+    <script src="app/app.routes.js"></script>
+</head>
+
+<body ng-app="blockExplorer">
+    <!-- ANGULAR VIEWS -->
+    <div ui-view>
+    </div>
+</body>
+
+</html>

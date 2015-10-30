@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div class="recentTopBarContainer" ng-include src="'app/components/views/topBar.html'" ng-init="initPage()"> </div>
+<h1 class="recentTitle"> Recent Transactions </h1>
+<div class="recentLeftContainer">
+    <h2 class="recentTransactionsLeftTitle">Testnet Transactions</h2>
+    <table class="recentTableSetup">
+        <thead class="tableBlockDisplay tableHeaderWidth">
+            <tr class="tableLeftRowBackground recentTableRow">
+                <td class="tableCellPadding recentTableRow">TXID</td>
+            </tr>
+            <tr ng-if="refreshTestnetNotifications()" class="animatedRow fadeInDown tableLeftRowBackgroundSub">
+                <td class="tableCellPadding"><a ng-click="refreshTransactions('testnet')" href="#"><i>Click to refresh {{testnetNotifications.notifications.length}} new TXID(s) </i> <i class="fa fa-refresh recentRefreshIcon"></i></a>
+                </td>
+            </tr>
+        </thead>
+        <tbody class="tableBlockDisplay recentTransactionsTableBody"  ng-class="{'refreshTransactionTable': refreshTestnetNotifications()}">
+            <tr class="tableCellPadding tableCellUnderline" ng-repeat="transaction in recentTestnetTransactions()">
+                <td class="tableCellPadding recentTransactionBodyCell"><a ng-href="/tTXID/{{transaction.result.txid}}" ng-click="findTransaction(transaction, 'tTransaction')">{{transaction.result.txid}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="recentRightContainer">
+    <h2 class="tableRightTextColor recentTransactionsRightTitle">Alphad Transactions</h2>
+    <table class="scroll recentTableSetup">
+        <thead class="tableBlockDisplay tableHeaderWidth">
+            <tr class="tableRightRowBackground recentTableRow">
+                <td class="tableCellPadding recentTableRow rightRowCells">TXID</td>
+            </tr>
+            <tr ng-if="refreshSidechainNotifications()" class="animatedRow fadeInDown tableRightRowBackgroundSub">
+                <td class="tableCellPadding"><a ng-click="refreshTransactions('sidechain')" href="#"><i>Click to refresh {{sidechainNotifications.notifications.length}} new TXID(s) </i> <i class="fa fa-refresh recentRefreshIcon"></i></a>
+                </td>
+            </tr>
+        </thead>
+        <tbody class="tableBlockDisplay recentTransactionsTableBody" ng-class="{'refreshTransactionTable': refreshSidechainNotifications()}">
+            <tr class="tableCellPadding tableCellUnderline" ng-repeat="transaction in recentSidechainTransactions()">
+                <td class="tableCellPadding recentTransactionBodyCell"><a ng-href="/sTXID/{{transaction.result.txid}}" ng-click="findTransaction(transaction, 'sTransaction')">{{transaction.result.txid}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

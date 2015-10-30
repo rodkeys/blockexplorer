@@ -1,0 +1,62 @@
+<div class="recentTopBarContainer" ng-include src="'app/components/views/topBar.html'"> </div>
+<h1 class="recentTitle"> Recent Blocks </h1>
+<div class="recentLeftContainer">
+    <div class="tableLeftTitleArea">
+        <h2 class="tableLeftRowSubtitle">Testnet Blocks</h2>
+        <select class="tableSelect" ng-model="data.testnetBlocksLoaded">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+        </select>
+        <span class="tableSelectDescription"> Amount to Load </span>
+    </div>
+    <table class="scroll recentBlocksTableSetup">
+        <thead class="tableBlockDisplay tableHeaderWidth">
+            <tr class="tableLeftRowBackground recentTableRow">
+                <td class="tableCellPadding">Height</td>
+                <td class="tableCellPadding">Date</td>
+                <td class="tableCellPadding">Difficulty</td>
+                <td class="tableCellPadding">Size</td>
+            </tr>
+        </thead>
+        <tbody class="tableBlockDisplay recentBlocksTableBody" id="testnetBlocks">
+            <tr class="tableCellPadding tableCellUnderline" ng-repeat="block in recentTestnetBlocks() track by $index">
+                <td class="tableCellPadding recentTransactionBodyCell"><a href="#" ng-click="findTestnetBlock(block)">{{block.result.height}}</a></td>
+                <td class="tableCellPadding recentTransactionBodyCell">{{block.result.time}}</td>
+                <td class="tableCellPadding recentTransactionBodyCell">{{block.result.difficulty}}</td>
+                <td class="tableCellPadding recentTransactionBodyCell">{{block.result.size}} bytes</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="recentRightContainer">
+    <div class="tableRightTitleArea">
+        <h2 class="tableRightRowSubtitle tableRightTextColor">Alphad Blocks</h2>
+        <select class="tableSelect" ng-model="data.sidechainBlocksLoaded">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+        </select>
+        <span class="tableRightTextColor tableSelectDescription"> Amount to Load </span>
+    </div>
+    <table class="scroll recentBlocksTableSetup">
+        <thead class="tableBlockDisplay tableHeaderWidth">
+            <tr class="tableRightRowBackground recentTableRow">
+                <td class="tableCellPadding tableRightTextColor">Height</td>
+                <td class="tableCellPadding tableRightTextColor">Time</td>
+                <td class="tableCellPadding tableRightTextColor">Difficulty</td>
+                <td class="tableCellPadding tableRightTextColor">Size</td>
+            </tr>
+        </thead>
+        <tbody class="tableBlockDisplay recentBlocksTableBody" id="sidechainBlocks">
+            <tr class="tableCellPadding tableCellUnderline" ng-repeat="block in recentSidechainBlocks() track by $index">
+                <td class="tableCellPadding recentTransactionBodyCell"><a href="#" ng-click="findSidechainBlock(block)">{{block.result.height}}</a></td>
+                <td class="tableCellPadding recentTransactionBodyCell">{{block.result.time}}</td>
+                <td class="tableCellPadding recentTransactionBodyCell">{{block.result.difficulty}}</td>
+                <td class="tableCellPadding recentTransactionBodyCell">{{block.result.size}} bytes</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

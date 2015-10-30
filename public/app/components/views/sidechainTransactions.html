@@ -1,0 +1,83 @@
+<div ng-include src="'app/components/views/topBar.html'"> </div>
+<div style="margin-left: 20px; width: 90vw; word-wrap: break-word">
+    <span class="blockInformation">
+<b>Type:</b> Sidechain Transaction
+        <br>
+
+
+<b>TXID:</b> {{transaction.txid}}
+<br>
+    <span ng-hide="unconfirmedTransaction"><b>Block hash:</b><a target="_self" ng-href="/sblock/{{transaction.blockhash}}"> {{transaction.blockhash}} </a>
+    <br></span>
+    <span ng-hide="unconfirmedTransaction"><b>Block time:</b> {{transaction.blocktime}} 
+    <br></span>
+    <b>Version:</b> {{transaction.version}}
+    <br>
+    <b>Locktime:</b> {{transaction.locktime}}
+    <br>
+    <span ng-hide="unconfirmedTransaction"><b>Confirmations:</b> {{transaction.confirmations}} 
+    <br></span>
+    <span ng-hide="unconfirmedTransaction"><b>Transaction Date:</b> {{transaction.time}} 
+    <br></span>
+     <span ng-hide="unconfirmedTransaction"><b>Hex:</b> <span style="font-size: .5em">{{transaction.hex}} </span><br> </span>
+         <span ng-if="coinbaseStatus"><b>Notes:</b> Coinbase Transaction
+<br> </span>
+<span ng-if="unconfirmedTransaction"><b>Notes:</b> Unconfirmed Transaction <br> </span>
+    <br>
+    <h2>Transaction Inputs: </h2>
+    <span ng-if="coinbaseStatus"><b>Coinbase:</b> {{transaction.vin[0].coinbase}}<br>
+        <b>Input Sequence:</b> <span> {{transaction.vin[0].sequence}} </span>
+            <br></span>
+    <ol>
+        <li ng-repeat="input in transactionInputs" ng-if="!coinbaseStatus">
+            <b>Input TXID:</b><a target="_self" ng-href="/sTXID/{{input.txid}}"> {{input.txid}}</a>
+            <br>
+            <b>Scriptsig ASM:</b> <span style="font-size: .5em"> {{input.scriptSig.asm}} </span>
+            <br>
+            <b>Scriptsig Hex:</b> <span style="font-size: .5em"> {{input.scriptSig.hex}} </span>
+            <br>
+            <b>Input Sequence:</b> {{input.sequence}}
+            <br>
+            <b>vout:</b> {{input.vout}}
+            <br>
+            <br>
+        </li>
+    </ol>
+    <h2>Transaction Outputs</h2>
+    <ol>
+        <li ng-repeat="output in transactionOutputs">
+            <span ng-if="!coinbaseStatus">
+            <b>Ct-bits:</b> {{output["ct-bits"]}}
+            <br>
+            <b>Ct-exponent:</b> {{output["ct-exponent"]}}
+            <br>
+            <b>Value-maxium:</b> {{output["value-maximum"]}}
+            <br>
+            <b>Value-minimum:</b> {{output["value-minimum"]}}
+            <br>
+            </span>
+            <span ng-if="coinbaseStatus">
+                <b>Value:</b> {{output.value}}
+                <br></span>
+            <b>n:</b> {{output.n}}
+            <br>
+            <b>Asm</b> {{output.scriptPubKey.asm}}
+            <br>
+            <b>Hex</b> {{output.scriptPubKey.hex}}
+            <br>
+            <b>ReqSigs:</b> {{output.scriptPubKey.reqSigs}}
+            <br>
+            <b>Type:</b> {{output.scriptPubKey.type}}
+            <br>
+            <b>SerValue:</b> <span style="font-size: .5em"> {{output.serValue}}</span>
+            <br>
+            <b>Addresses:</b>
+            <ol>
+                <li ng-repeat="address in output.scriptPubKey.addresses track by $index">
+                    {{address}}
+                </li>
+                <br>
+            </ol>
+        </li>
+        </span>
+</div>

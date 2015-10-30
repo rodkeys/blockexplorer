@@ -1,0 +1,28 @@
+<script src="app/components/miscellaneous/classie.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<section class="content bgcolor-4">
+    <form ng-submit="searchExplorer()">
+        <h2 style="text-align: center; position: relative; top: 175px">Block Explorer</h2>
+        <span class="input input--chisato">
+          <input ng-model="searchInput" class="input__field input__field--chisato" type="text" id="input-13" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+         
+          <a href="#"><i class="fa fa-arrow-right testArrow2 testArrow" ng-click="searchExplorer()" style="position: absolute;right: 0px; bottom: 27px; margin-right: 15px;"></i></a>
+
+          <label class="input__label input__label--chisato" for="input-13">
+
+            <span class="input__label-content input__label-content--chisato" data-content="{{typeMessage}}">{{searchMessage}}</span>
+        </label>
+        </span>
+    </form>
+    
+
+     <section class="color-1">
+      <nav class="cl-effect-1 rootLinkGroup">
+     <a href="/recent/blocks" class="rootLink"> Recent Blocks </a>
+     <a href="/recent/transactions" class="rootLink"> Recent TXIDs </a>
+     <a href="/about" class="rootLink"> About </a>
+     <a href="#" class="rootLink"> Open Source </a>
+        </nav>
+      </section>
+</section>
+
